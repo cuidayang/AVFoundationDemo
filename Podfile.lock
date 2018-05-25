@@ -1,0 +1,25 @@
+PODS:
+  - GPUImage (0.1.7)
+  - Masonry (1.1.0)
+  - SDWebImage (4.3.3):
+    - SDWebImage/Core (= 4.3.3)
+  - SDWebImage/Core (4.3.3)
+  - YYCategories (1.0.4):
+    - YYCategories/no-arc (= 1.0.4)
+  - YYCategories/no-arc (1.0.4)
+
+DEPENDENCIES:
+  - GPUImage (~> 0.1.7)
+  - Masonry
+  - SDWebImage
+  - YYCategories (~> 1.0.4)
+
+SPEC CHECKSUMS:
+  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
+  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
+
+PODFILE CHECKSUM: c8b8af30cab0197c7b1379d856a35a24cbb359c8
+
+COCOAPODS: 1.4.0.beta.2
