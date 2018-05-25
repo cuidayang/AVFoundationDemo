@@ -400,20 +400,7 @@
     }];
     [alertController addAction:action5];
     
-    UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"修改比例为16:9并模糊背景" style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action) {
-        
-        [AVFoundationUtils resizeVideoWithURL:url targetSize:CGSizeMake(180, 320) resizeMode:0 progress:nil completion:^(NSURL *url, NSError *error) {
-            NSLog(@"修改大小成功:%@", url);
-            [AVFoundationUtils blurVideoWithURL:url radius:10 clippedSize:CGSizeMake(180, 320) completion:^(NSURL *outputURL, NSError *error) {
-                NSLog(@"blurOutputURL:%@", outputURL);
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [self reloadData];
-                    [self.tableView reloadData];
-                });
-            }];
-        }];
-    }];
-    [alertController addAction:action2];
+    
     
     UIAlertAction *cancle = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *_Nonnull action) {
         

@@ -91,7 +91,7 @@ IB_DESIGNABLE
  */
 @property (nonatomic, assign) IBInspectable BOOL autoplay;
 /**
- * 是否边下边播
+ * 是否边下边播,默认为NO, 下载之后播放
  */
 @property (nonatomic, assign) IBInspectable BOOL playWhileDownload;
 /**

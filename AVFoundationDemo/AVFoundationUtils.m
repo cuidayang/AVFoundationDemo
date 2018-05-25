@@ -562,53 +562,7 @@
     [self logExporterProgress:exporter progress:progress];
 }
 
-+ (void)blurVideoWithURL:(NSURL *)url radius:(CGFloat)radius clippedSize:(CGSize)size completion:(void (^)(NSURL *, NSError *))completion{
-    NSDate *methodStart = [NSDate date];
-    AVAsset *videoAsset = [AVURLAsset URLAssetWithURL:url options:@{AVURLAssetPreferPreciseDurationAndTimingKey:@(YES)}];
-//    CIFilter *filter = [CIFilter filterWithName:@"CIGaussianBlur"];
-    //[filter setValue:@(radius) forKey:kCIInputRadiusKey];
-    CGSize natureSize = videoAsset.naturalSize;
-    __block NSInteger value = 0;
-//    __block CIImage *outputImage = nil;
-    AVVideoComposition *composition = [AVVideoComposition videoCompositionWithAsset:videoAsset applyingCIFiltersWithHandler:^(AVAsynchronousCIImageFilteringRequest * _Nonnull request) {
-        CIImage *source = request.sourceImage.imageByClampingToExtent;
-        CIImage *image = [source imageBySettingAlphaOneInExtent:CGRectMake((natureSize.width - size.width)/2, (natureSize.height-size.height)/2, size.width, size.height)];
-        CGFloat seconds = CMTimeGetSeconds(request.compositionTime);
-        CIImage *blurImage = [source imageByApplyingGaussianBlurWithSigma:seconds * 10.0];
-        CIImage *output = [image imageByCompositingOverImage:blurImage];
-//        outputImage = output;
-        [request finishWithImage:[output imageByCroppingToRect:request.sourceImage.extent] context:nil];
-        value++;
-        NSLog(@"value:%d",value);
-    }];
-    
-    AVAssetExportSession *exporter = [[AVAssetExportSession alloc] initWithAsset:videoAsset
-                                                                      presetName:AVAssetExportPresetMediumQuality];
-    NSString *path = [[self.class defaultCacheDirectory] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.mp4", [NSUUID UUID].UUIDString]];
-    if ([[NSFileManager defaultManager]fileExistsAtPath:path]) {
-        [[NSFileManager defaultManager]removeItemAtPath:path error:nil];
-    }
-    exporter.outputURL= [NSURL fileURLWithPath:path];
-    exporter.outputFileType = AVFileTypeQuickTimeMovie;
-    exporter.shouldOptimizeForNetworkUse = YES;
-    exporter.videoComposition = composition;
-    [exporter exportAsynchronouslyWithCompletionHandler:^{
-        NSDate *methodFinish = [NSDate date];
-        NSTimeInterval executionTime = [methodFinish timeIntervalSinceDate:methodStart];
-        NSLog(@"executionTime = %f", executionTime);
-        if (exporter.status == AVAssetExportSessionStatusCompleted) {
-            if (completion) {
-                completion([NSURL fileURLWithPath:path], nil);
-            }
-        }
-        else
-        {
-            if (completion) {
-                completion(nil, exporter.error);
-            }
-        }
-    }];
-}
+
 
 + (void)saveVideoToAlubmAsLivePhotoWithURL:(NSURL *)url progress:(void(^)(CGFloat))progress completion:(void (^)(NSError *))completion {
     NSDate *methodStart = [NSDate date];

@@ -11,6 +11,7 @@
 		1A4F1D7020B66E1000A1DBFE /* KYVideoProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4F1D6D20B66E0F00A1DBFE /* KYVideoProgressView.m */; };
 		1A4F1D7120B66E1000A1DBFE /* KYProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4F1D6F20B66E1000A1DBFE /* KYProgressView.m */; };
 		1A4F1D7420B66E3100A1DBFE /* UIView+DimView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4F1D7320B66E3100A1DBFE /* UIView+DimView.m */; };
+		1A5427EA20B7F76700E85889 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1A5427E920B7F76700E85889 /* README.md */; };
 		1A646D1520A92C2C00B43FD4 /* LayerAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A646D1420A92C2C00B43FD4 /* LayerAnimationViewController.m */; };
 		1A8964BE20A1342C00B9346B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8964BD20A1342C00B9346B /* AppDelegate.m */; };
 		1A8964C120A1342C00B9346B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8964C020A1342C00B9346B /* ViewController.m */; };
@@ -58,6 +59,7 @@
 		1A4F1D6F20B66E1000A1DBFE /* KYProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYProgressView.m; sourceTree = "<group>"; };
 		1A4F1D7220B66E3100A1DBFE /* UIView+DimView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DimView.h"; sourceTree = "<group>"; };
 		1A4F1D7320B66E3100A1DBFE /* UIView+DimView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DimView.m"; sourceTree = "<group>"; };
+		1A5427E920B7F76700E85889 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		1A646D1320A92C2C00B43FD4 /* LayerAnimationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LayerAnimationViewController.h; sourceTree = "<group>"; };
 		1A646D1420A92C2C00B43FD4 /* LayerAnimationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LayerAnimationViewController.m; sourceTree = "<group>"; };
 		1A8964B920A1342C00B9346B /* AVFoundationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVFoundationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +163,7 @@
 		1A8964BB20A1342C00B9346B /* AVFoundationDemo */ = {
 			isa = PBXGroup;
 			children = (
+				1A5427E920B7F76700E85889 /* README.md */,
 				1A4F1D7220B66E3100A1DBFE /* UIView+DimView.h */,
 				1A4F1D7320B66E3100A1DBFE /* UIView+DimView.m */,
 				1A4F1D6C20B66E0F00A1DBFE /* KYProgressView.h */,
@@ -333,6 +336,7 @@
 			files = (
 				1A8964C920A1342F00B9346B /* LaunchScreen.storyboard in Resources */,
 				1A8964C620A1342F00B9346B /* Assets.xcassets in Resources */,
+				1A5427EA20B7F76700E85889 /* README.md in Resources */,
 				1A8964C420A1342C00B9346B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
